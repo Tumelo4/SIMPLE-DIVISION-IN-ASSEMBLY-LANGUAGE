@@ -1,10 +1,9 @@
 section .data
 
-Output db "Simple example demonstrating basic Multiplication."
-Output1 db "THREE * TWO"
+Output db "Simple example demonstrating basic Division."
+Output1 db "TWo / TWO"
 Output2 db "Answer: "
 Two db 2
-Three db 3
 EndLine db 0xA, 0xD
 
 section .bss
@@ -20,7 +19,7 @@ _start:
 	mov rax, 1
 	mov rdi, 1
 	mov rsi, Output
-	mov rdx, 47
+	mov rdx, 44
 	syscall
 
 	mov rax, 1
@@ -32,12 +31,12 @@ _start:
 	mov rax, 1
 	mov rdi, 1
 	mov rsi, Output1
-	mov rdx, 11
+	mov rdx, 9
 	syscall
 
 	xor rax, rax
 	mov al , byte[Two]
-	mul byte[Three]
+	div byte[Two]
 	add al, 48
 	mov byte[Answer] , al
 

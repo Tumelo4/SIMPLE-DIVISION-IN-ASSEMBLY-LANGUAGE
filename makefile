@@ -1,9 +1,9 @@
-mul:
-	yasm -f elf64 -g dwarf2 -l mul.lst mul.asm
-	ld -o mul mul.o
+div:
+	yasm -f elf64 -g dwarf2 -l div.lst div.asm
+	ld -o div div.o
 
 run:
-	./mul
+	./div
 
 clean:
-	rm -f *o *lst mul
+	rm -f *o *lst div
